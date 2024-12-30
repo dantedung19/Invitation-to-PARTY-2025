@@ -2,6 +2,7 @@ let list = document.querySelectorAll(".navigation li");
 let addressButton = document.getElementById("addressButton");
 let eventButton = document.getElementById("eventButton");
 let dressCodeButton = document.getElementById("dressCodeButton");
+const navibar = document.querySelector("#naviga_bar");
 
 // Letter Script -------
 
@@ -50,6 +51,7 @@ function activeLink() {
         isInviteActive = true; // Đặt trạng thái là active
         startBtn.style.display = "block";
         saveDate.style.display = "block"
+        navibar.style.zIndex = "99"
     } else {
         isInviteActive = false; // Đặt trạng thái không active
         startBtn.style.display = "none";
@@ -63,23 +65,35 @@ function activeLink() {
     if (spanText === "Address") {
         isAddressActive = true; // Đặt trạng thái là active
         mapContainer.style.display = "block";
+        mapContainer.style.zIndex = "9999"
+        navibar.style.zIndex = "99999"
     } else {
         isAddressActive = false; // Đặt trạng thái không active
         mapContainer.style.display = "none";
+        mapContainer.style.zIndex = "1"
     }
     if (spanText === "Event") {
         isEventActive = true; // Đặt trạng thái là active
         timelineContai.style.display = "block";
+        timelineContai.style.zIndex = "9999"
+        navibar.style.zIndex = "99999"
+
     } else {
         isEventActive = false; // Đặt trạng thái không active
         timelineContai.style.display = "none";
+        timelineContai.style.zIndex = "1"
+
     }
     if (spanText === "DressCode") {
         isDresscodeActive = true; // Đặt trạng thái là active
         dresscode.style.display = "block";
+        dresscode.style.zIndex = "9999"
+        navibar.style.zIndex = "99999"
+
     } else {
         isDresscodeActive = false; // Đặt trạng thái không active
         dresscode.style.display = "none";
+        dresscode.style.zIndex = "1"
     }
 
 }
@@ -99,15 +113,15 @@ document.body.appendChild(overlay);
 
 
 startBtn.addEventListener("click", () => {
-	hackerTextEl.textContent = "";
-    backboard.style.overflow = "auto"; 
+    hackerTextEl.textContent = "";
+    backboard.style.overflow = "auto";
     backboard.style.height = "60vh";
-	startBtn.style.display = "none";
+    startBtn.style.display = "none";
     backboard.style.display = "block"; // Hiển thị lại backboard
     overlay.style.display = "block"; // Hiển thị overlay
 
-	let i = 0;
-	intervalId = setInterval(() => {
+    let i = 0;
+    intervalId = setInterval(() => {
         if (i < allTextChars.length) {
             hackerTextEl.textContent += allTextChars[i];
             i++;
