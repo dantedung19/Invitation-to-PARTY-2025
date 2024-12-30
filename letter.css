@@ -160,6 +160,7 @@
 
 .savedate {
     margin-bottom: 10px;
+    display: none;
     /* Khoảng cách dưới thẻ p */
 }
 
