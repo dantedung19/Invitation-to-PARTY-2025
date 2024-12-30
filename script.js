@@ -1097,6 +1097,7 @@ const loader = document.querySelector('#sk-cli__scroll__loader1');
 const loader2 = document.querySelector('#sk-cli__scroll__loader2');
 const firework = document.querySelector('#fireworks_body');
 const navigationMenu = document.getElementById('navigation_menu');
+
 // Hàm tạo hiệu ứng ẩn hiện (fade in/out)
 let visible = true; // Trạng thái hiện tại: đang hiển thị
 
@@ -1139,6 +1140,9 @@ setTimeout(() => {
             item.classList.add('show'); // Hiển thị mục
         }, index * 500); // Đặt độ trễ tăng dần cho mỗi mục
     });
+
+    const saveDate = document.querySelector("#save_date");
+    saveDate.style.display = "block"
 }, 12000);
 
 // bottom
