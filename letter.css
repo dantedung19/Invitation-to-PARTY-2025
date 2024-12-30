@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.contai_menu {
+    width: 100%;
+    /* Điều chỉnh chiều rộng để nó luôn chiếm toàn bộ màn hình */
+    max-width: 1200px;
+    /* Giới hạn chiều rộng tối đa */
+    height: 400px;
+    margin: 0 auto;
+    /* Căn giữa phần tử */
+    z-index: 999;
+}
+
+.contai_button {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    top: 50%;
+    /* Đặt phần tử ở giữa màn hình theo chiều dọc */
+    left: 50%;
+    /* Đặt phần tử ở giữa màn hình theo chiều ngang */
+    transform: translate(-50%, -50%);
+    /* Đảm bảo căn giữa chính xác */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Căn giữa nút button theo chiều ngang */
+    align-items: center;
+    /* Căn giữa nút button theo chiều dọc */
+}
+
+.start-button {
+    font-family: "VT323", monospace;
+    font-size: 1.5rem;
+    box-shadow: 0 0 5px #00FF00;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    /* Căn giữa nội dung nút button */
+    align-items: center;
+    /* Căn giữa nội dung nút button */
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: chartreuse;
+    color: black;
+}
+
+#backboard {
+    width: 75%;
+    max-height: 70vh;
+    background-color: black;
+    color: chartreuse;
+    overflow-x: auto;
+    overflow-y: auto;
+    box-shadow: 0 0 5px #00FF00;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    /* Đưa lên trên tất cả */
+    padding: 20px;
+    border-radius: 8px;
+    display: none;
+}
+
+.map_contai {
+    width: 80%;
+    height: 400px;
+    position: absolute;
+    overflow: hidden;
+    background-color: black;
+    box-sizing: border-box;
+    transition: 2s linear;
+    box-shadow: 0 0 5px #00FF00;
+    display: none;
+    top: 7%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Làm mờ nền */
+    z-index: 99;
+    /* Đặt ngay dưới #backboard */
+    display: none;
+    /* Ẩn ban đầu */
+}
+
+.code-column {
+    color: chartreuse;
+    margin: 0;
+    padding: 10px;
+    text-wrap: wrap;
+    font-family: "VT323", monospace;
+    font-size: 1.9rem;
+    text-shadow: 0 0 15px #00FF00;
+    position: absolute;
+    bottom: 0;
+
+    /* Thêm thuộc tính cuộn */
+    overflow-x: scroll;
+    /* Hiển thị thanh cuộn ngang */
+    overflow-y: scroll;
+    /* Hiển thị thanh cuộn dọc */
+
+    /* Đặt chiều cao và chiều rộng cố định */
+
+    white-space: pre-wrap;
+    box-sizing: border-box;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 5px #ff4d4d;
+    transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+    background-color: #ff1a1a;
+    box-shadow: 0 0 8px #ff1a1a;
+}
+
+.highlight {
+    color: #ff5733;
+    /* Màu sắc nổi bật */
+    font-weight: bold;
+    /* In đậm */
+    font-size: 1.6rem;
+    /* Kích thước chữ */
+    background-color: #000;
+    /* Nền đen */
+    padding: 5px 10px;
+    /* Padding xung quanh nội dung */
+    border-radius: 5px;
+    /* Bo tròn góc */
+    text-shadow: 0 0 10px #ff5733;
+    /* Hiệu ứng phát sáng */
+}
+
+.savedate {
+    margin-bottom: 10px;
+    display: none;
+    /* Khoảng cách dưới thẻ p */
+}
+
+
+/* Media Queries for responsiveness */
+@media (max-width: 1000px) {
+    .contai_menu {
+        width: 70%;
+        /* Thu nhỏ phần tử trên màn hình lớn */
+        height: auto;
+    }
+
+    .start-button {
+        font-size: 1.2rem;
+        /* Thu nhỏ kích thước chữ trên màn hình nhỏ */
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 800px) {
+    .contai_menu {
+        width: 70%;
+        /* Thu nhỏ phần tử khi màn hình nhỏ hơn 768px */
+        height: auto;
+    }
+
+    .start-button {
+        font-size: 1rem;
+        /* Thu nhỏ kích thước chữ */
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contai_menu {
+        width: 50%;
+        /* Đảm bảo phần tử chiếm hết chiều rộng màn hình trên điện thoại */
+        height: auto;
+    }
+
+    .start-button {
+        font-size: 1rem;
+        /* Giữ kích thước chữ phù hợp */
+        padding: 6px 12px;
+        width: 80%;
+        /* Nút sẽ chiếm phần lớn chiều rộng trên điện thoại */
+    }
+}
