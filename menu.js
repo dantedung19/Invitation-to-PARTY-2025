@@ -1,5 +1,3 @@
-
-
 let list = document.querySelectorAll(".navigation li");
 let addressButton = document.getElementById("addressButton");
 let eventButton = document.getElementById("eventButton");
@@ -11,6 +9,8 @@ let isInviteActive = false;
 let inviteButton = document.getElementById("inviteButton");
 const startBtn = document.querySelector("#start-btn");
 const backboard = document.getElementById("backboard");
+const saveDate = document.querySelector("#save_date");
+
 let intervalId = null;
 
 // Letter Script -------
@@ -49,9 +49,11 @@ function activeLink() {
     if (spanText === "Invite") {
         isInviteActive = true; // Đặt trạng thái là active
         startBtn.style.display = "block";
+        saveDate.style.display = "block"
     } else {
         isInviteActive = false; // Đặt trạng thái không active
         startBtn.style.display = "none";
+        saveDate.style.display = "none"
         backboard.style.height = "0vh";
         if (intervalId) {
             clearInterval(intervalId);
